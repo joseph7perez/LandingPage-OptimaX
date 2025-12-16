@@ -1,0 +1,77 @@
+---
+const services = [
+  {
+    title: "Desarrollo de sitios web y dashboards",
+    description: "Sitios modernos y paneles interactivos pensados para PYMES y equipos en crecimiento.",
+    icon: "🌐",
+  },
+  {
+    title: "Automatización de procesos con IA y n8n",
+    description: "Automatizamos tareas repetitivas y flujos internos usando IA y herramientas no-code.",
+    icon: "🤖",
+  },
+  {
+    title: "Integración de sistemas y APIs",
+    description: "Conectamos tu software con CRMs, ERPs, pagos, correos y herramientas externas.",
+    icon: "🔗",
+  },
+  {
+    title: "Desarrollo de software a medida",
+    description: "Creamos soluciones personalizadas adaptadas a las necesidades de tu negocio.",
+    icon: "⚙️",
+  },
+  {
+    title: "Optimización de rendimiento y SEO",
+    description: "Mejoramos velocidad, accesibilidad y posicionamiento en buscadores.",
+    icon: "🚀",
+  },
+//   {
+//     title: "Seguridad y protección web",
+//     description: "Implementamos medidas de seguridad, backups y monitoreo continuo.",
+//     icon: "🔒",
+//   },
+  {
+    title: "Mantenimiento y soporte continuo",
+    description: "Soporte técnico, actualizaciones y resolución de errores cuando lo necesites.",
+    icon: "🛠️",
+  },
+//   {
+//     title: "Analítica y monitoreo de aplicaciones",
+//     description: "Medimos rendimiento, uso y errores para tomar mejores decisiones.",
+//     icon: "📊",
+//   },
+];
+---
+
+  <div class=" px-6">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto  mb-8 md:mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold text-textcolor-heading mb-4">
+        Nuestros servicios
+      </h2>
+      <p class="text-textcolor-body text-lg">
+        Soluciones digitales diseñadas para escalar tu negocio de forma segura y eficiente.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map(service => (
+        <div class="group bg-blue-50 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="text-2xl md:text-3xl mb-4">{service.icon}</div>
+          <h3 class="text-lg font-semibold text-textcolor-heading mb-2">
+            {service.title}
+          </h3>
+          <p class="text-sm text-textcolor-body mb-4">
+            {service.description}
+          </p>
+          {/* <a
+            href="#contact"
+            class="inline-flex items-center text-primary font-medium text-sm hover:underline"
+          >
+            Solicitar información →
+          </a> */}
+        </div>
+      ))}
+    </div>
+  </div>

@@ -1,5 +1,7 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import SectionContainer from '../components/layout/SectionContainer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Services from '../components/sections/Services.astro';
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 
@@ -7,6 +9,33 @@ import "../styles/global.css";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="OptimaX-AI" description="descripcion sitio web">
+	<main>
+		<SectionContainer id="top" class="h-dvh flex flex-col items-center justify-center">
+			<Hero></Hero>
+		</SectionContainer>
+
+		<SectionContainer id="services" class="scroll-mt-34 mb-24 transition-all duration-2500 opacity-0 translate-y-10 reveal">
+			<Services></Services>
+		</SectionContainer>
+	</main>
 </Layout>
+
+<!-- Animación de cada seccion al aparecer por primera vez -->
+<script is:inline>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+        observer.unobserve(entry.target); // solo una vez
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+</script>
