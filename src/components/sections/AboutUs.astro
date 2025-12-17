@@ -1,0 +1,39 @@
+---
+import TeamCard from "../ui/TeamCard.astro";
+import { team as teamES } from "../../data/es/aboutUs";
+import { commonTexts as commontextsES } from "../../data/es/aboutUs";
+
+---
+   
+   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <!-- Main Layout Container -->
+      <div
+        class=" flex h-full grow flex-col items-center py-10 px-4"
+      >
+        <!-- Section Header Content -->
+        <div
+          class="layout-content-container flex flex-col max-w-240 w-full mb-12 text-center"
+        >
+          <div class="flex flex-col items-center gap-4">
+            <h2
+              class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em]"
+            >
+              {commontextsES.title}
+            </h2>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-base md:text-lg font-normal leading-relaxed max-w-2xl"
+            >
+              {commontextsES.description}
+            </p>
+          </div>
+        </div>
+        <!-- Team Grid -->
+        <div class="layout-content-container w-full max-w-275">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamES.map(member => (
+                <TeamCard {...member} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
