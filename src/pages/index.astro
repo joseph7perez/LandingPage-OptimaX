@@ -1,23 +1,42 @@
 ---
 import SectionContainer from '../components/layout/SectionContainer.astro';
+import AboutUs from '../components/sections/AboutUs.astro';
+import Contact from '../components/sections/Contact.astro';
+import CTA from '../components/sections/CTA.astro';
 import Hero from '../components/sections/Hero.astro';
+import Results from '../components/sections/Results.astro';
 import Services from '../components/sections/Services.astro';
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="OptimaX-AI" description="descripcion sitio web">
-	<main>
-		<SectionContainer id="top" class="h-dvh flex flex-col items-center justify-center">
+	<main class="px-4">
+		<SectionContainer id="top" class="mt-24 md:mt-0 md:h-dvh flex flex-col items-center justify-center">
 			<Hero></Hero>
 		</SectionContainer>
 
-		<SectionContainer id="services" class="scroll-mt-34 mb-24 transition-all duration-2500 opacity-0 translate-y-10 reveal">
+		<SectionContainer id="services" class="scroll-mt-34 transition-all duration-2500 opacity-0 translate-y-10 reveal">
 			<Services></Services>
 		</SectionContainer>
+
+    <SectionContainer id="results" class="scroll-mt-24 transition-all duration-2500 opacity-0 translate-y-10 reveal">
+			<Results></Results>
+		</SectionContainer>
+
+    <SectionContainer id="aboutus" class="scroll-mt-34 transition-all duration-2500 opacity-0 translate-y-10 reveal">
+      <AboutUs></AboutUs>
+    </SectionContainer>
+
+    <!-- <SectionContainer>
+      <CTA></CTA>
+    </SectionContainer>
+ -->
+    <SectionContainer id="contact" class="scroll-mt-34 transition-all duration-2500 opacity-0 translate-y-10 reveal">
+      <Contact></Contact>
+    </SectionContainer>
+
 	</main>
 </Layout>
 
