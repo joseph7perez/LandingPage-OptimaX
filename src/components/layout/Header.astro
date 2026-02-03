@@ -1,12 +1,5 @@
 ---
-const navItems = [
-  { href: "#top", label: "Inicio" },
-  { href: "#services", label: "Servicios" },
-  { href: "#aboutus", label: "Sobre nosotros" },
-  { href: "#experience", label: "Experiencia" },
-//   { href: "#projects", label: "Proyectos" },
-//   { href: "#skills", label: "Skills" },
-];
+import { navItems } from "../../data/es/nav";
 
 ---
 
@@ -16,9 +9,9 @@ const navItems = [
     window.addEventListener("scroll", () => {
       const header = document.querySelector("header");
       if (window.scrollY > 10) {
-        header?.classList.add("bg-[#F8FAFC]/70", "backdrop-blur-md", "shadow-md");
+        header?.classList.add("bg-[#F8FAFC]/70", "backdrop-blur-md", "shadow-md", "dark:bg-[#0F172A]/90");
       } else {
-        header?.classList.remove("bg-[#F8FAFC]/70", "backdrop-blur-md", "shadow-md");
+        header?.classList.remove("bg-[#F8FAFC]/70", "backdrop-blur-md", "shadow-md", "dark:bg-[#0F172A]/90");
       }
     });
   }
@@ -38,7 +31,7 @@ const navItems = [
   <!-- Menú desktop -->
   <nav class="hidden md:flex flex-row gap-x-10 opacity-80 text-sm">
     {navItems.map(item => (
-      <a href={item.href} class="text-black hover:underline">{item.label}</a>
+      <a href={item.href} class="text-black hover:underline dark:text-slate-400">{item.label}</a>
     ))}
   </nav>
 
