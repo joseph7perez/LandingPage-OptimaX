@@ -1,14 +1,15 @@
-<footer class="bg-[#0F172A] text-white py-10 mt-16 w-dvw p-5">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-y-6">
+---
+import { navItems } from "../../data/es/nav";
+---
+
+<footer class="bg-[#0F172A] text-white py-10 mt-16  p-5 w-full">
+  <div class="max-w-6xl mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center justify-between gap-y-6">
     
     <!-- Navegación -->
     <nav class="flex flex-wrap justify-center gap-x-6 text-sm opacity-80 gap-y-3">
-      <a href="#top" class="hover:underline transition duration-200">Inicio</a>
-      <a href="#sobre" class="hover:underline transition duration-200">Sobre nosotros</a>
-      <a href="#experience" class="hover:underline transition duration-200">Experiencia</a>
-      <a href="#projects" class="hover:underline transition duration-200">Proyectos</a>
-      <a href="#educacion" class="hover:underline transition duration-200">Educación</a>
-      <a href="#skills" class="hover:underline transition duration-200">Skills</a>
+       {navItems.map(item => (
+        <a href={item.href} class=" hover:underline">{item.label}</a>
+      ))}
     </nav>
 
     <!-- Créditos o redes -->
