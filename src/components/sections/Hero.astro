@@ -1,7 +1,12 @@
+---
+import { commonTexts } from "../../data/es/hero"
+import { buttons } from "../../data/es/common"
+
+---
 <!-- Hero Section -->
 <div>
     <div
-        class="flex flex-col max-w-7xl flex-1 px-4 md:px-10"
+        class="flex flex-col max-w-7xl flex-1"
     >
         <!-- <div class="@container"> -->
         <div
@@ -10,64 +15,57 @@
             <!-- Text Content -->
             <div class="flex flex-col gap-6 lg:w-1/2 lg:py-10">
                 <div class="flex flex-col gap-4 text-left">
-                    <h1
-                    class="text-[#0d141b] dark:text-white text-2xl font-black leading-tight tracking-[-0.033em] md:text-4xl lg:text-5xl"
-                    >
-                    La forma más simple de gestionar tus <span
-                        class="text-[#137fec]">procesos en la nube</span
-                    >.
+                    <h1 class="text-[#0d141b] dark:text-white text-2xl font-black leading-tight tracking-[-0.033em] md:text-4xl lg:text-5xl">{commonTexts.title.start} <span class="text-[#137fec]">{commonTexts.title.highlight}</span>.
                     </h1>
-                    <h2
-                    class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed md:text-lg max-w-xl"
-                    >
-                    Un software rápido, seguro y 100% online para mejorar
-                    productividad y reducir errores.
+                    <h2 class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed md:text-lg max-w-xl"
+                    >{commonTexts.subtitle}
                     </h2>
                 </div>
                 <div class="flex flex-wrap gap-3 mt-2">
-                    <button
-                    class="flex min-w-35 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#137fec] text-slate-50 text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20"
-                    >
-                    <span class="mr-2">Más información</span>
-                    <!-- <span class="material-symbols-outlined text-sm"
-                        >arrow_forward</span
-                    > -->
-                    </button>
+                    <a
+                        href="#services"
+                        class="flex min-w-35 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#137fec] text-slate-50 text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20"
+                        >
+                        <span class="mr-2">{buttons.info}</span>
+                        <!-- <span class="material-symbols-outlined text-sm"
+                            >arrow_forward</span
+                        > -->
+                    </a>
                     <button
                     class="flex min-w-35 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white dark:bg-transparent border border-slate-200 dark:border-slate-700 text-[#0d141b] dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                     >
-                    <span class="truncate">Ver características</span>
+                    <span class="truncate">{buttons.second}</span>
                     </button>
                 </div>
-                <div
+                <!-- <div
                     class="flex items-center gap-4 md:mt-4 text-sm text-slate-500 dark:text-slate-400"
                 >
                     <div class="flex items-center gap-1">
-                    <!-- <span
+                    <span
                         class="material-symbols-outlined text-green-500 text-lg"
                         >check_circle</span
-                    > -->
+                    >
                     <span>Un texto aqui</span>
                     </div>
                     <div class="flex items-center gap-1">
-                    <!-- <span
+                    <span
                         class="material-symbols-outlined text-green-500 text-lg"
                         >check_circle</span
-                    > -->
+                    >
                     <span>Ejemplo algo</span>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- Image Content -->
             <div
             class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-2xl shadow-blue-900/10 dark:shadow-black/30 border border-slate-200 dark:border-slate-800"
             >
-            <div
-                class="w-full aspect-4/3 bg-center bg-no-repeat bg-cover bg-slate-100 dark:bg-slate-800"
-                data-alt="Modern cloud software dashboard interface with analytics charts and process diagrams"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBICSU-zORCLCyePLYdHYIAGK-51FL5nV0A6UDsOqu2sIUhJQVj0HtKnAra3CRY-PmwNFf6BspXKH6c3bJmRTkVBmLNtT02oH2HhjRRzcEtrQO_mKOJOw4uQzm1Nmfk5zGWrILyNqbq2tYHmmBqib1xsxIRvHmSGz-yWVlftINuI6yVBqRQ9lObEKQyZvc16RrOU-jLTShrZFQPk8QTVB2HOwc9NLTNQCzOB0teiMNrxBOFlcNa8DmY0KXBWV7g-M808RiS4oGbe2Q");'
-            >
-            </div>
+                <div
+                    class="w-full aspect-4/3 bg-center bg-no-repeat bg-cover bg-slate-100 dark:bg-slate-800"
+                    data-alt="Modern cloud software dashboard interface with analytics charts and process diagrams"
+                    style='background-image: url("/heroImage.jpg")'
+                >
+                </div>
             </div>
         </div>
         <!-- </div> -->
