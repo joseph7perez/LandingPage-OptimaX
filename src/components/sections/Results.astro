@@ -1,0 +1,165 @@
+---
+import { commonTexts, stats, grafic, features, cta } from "../../data/es/results"
+import { TrendingUp } from '@lucide/astro'
+---   
+<!-- Header Section -->
+<div class=" flex pt-16 pb-8">
+    <div
+        class="flex flex-col  w-full text-center items-center gap-4"
+    >
+        <h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-[-0.033em]">
+            {commonTexts.title}
+        </h2>
+        <p class="text-slate-500 dark:text-slate-400 md:text-lg  max-w-180">{commonTexts.subtitle}</p>
+    </div>
+</div>
+<!-- Stats Grid Section -->
+<div class="w-full flex justify-center">
+    <div class="w-full">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        {stats.map(({ title, description, value, icon: Icon, trendIcon: TrendIcon }) => (
+            <div class="flex flex-col gap-4 rounded-xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-shadow">
+            
+               <div class="flex items-center gap-3">
+                    <div class="flex items-center justify-center size-8 md:size-10 rounded-full bg-blue-200 text-primary">
+                        <Icon class="size-5 md:size-6 text-blue-500" />
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-medium"> {title}</p>
+                </div>
+
+                <div>
+                    <p class="text-slate-900 dark:text-white tracking-tight text-2xl md:text-3xl font-bold leading-tight">
+                    {value}
+                    </p>
+
+                    <p class="text-emerald-600 dark:text-emerald-400 text-sm font-medium mt-1 flex items-center gap-1">
+                    <TrendIcon class="size-5" />
+                    {description}
+                    </p>
+                </div>
+            </div>
+        ))}
+        </div>
+    </div>
+</div>
+<!-- Chart & Detailed Breakdown Section -->
+<div class="w-full flex justify-center py-8">
+    <div class="flex flex-col lg:flex-row  w-full gap-8">
+        <!-- Chart Container -->
+        <div
+            class="flex flex-1 flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6 shadow-sm"
+        >
+            <div class="flex flex-col gap-2">
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">{grafic.title}</p>
+            <div class="flex items-end justify-between">
+                <p class="text-slate-900 dark:text-white tracking-tight text-2xl md:text-3xl font-bold leading-tight">
+                    {grafic.value}
+                </p>
+                <div
+                    class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-md"
+                >
+                    <TrendingUp />
+                    <p class="text-sm font-bold">{grafic.improvement}</p>
+                </div>
+            </div>
+            <p class="text-slate-400 dark:text-slate-500 text-sm mt-1">{grafic.description}</p>
+            </div>
+            <!-- SVG Chart -->
+            <div class="flex min-h-45 flex-1 flex-col justify-end pt-8">
+                <svg
+                    class="w-full h-full overflow-visible"
+                    fill="none"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 478 150"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <defs>
+                    <lineargradient
+                        gradientunits="userSpaceOnUse"
+                        id="paint0_linear"
+                        x1="239"
+                        x2="239"
+                        y1="0"
+                        y2="150"
+                    >
+                        <stop stop-color="#137fec" stop-opacity="0.2"></stop>
+                        <stop
+                        offset="1"
+                        stop-color="#137fec"
+                        stop-opacity="0"
+                        ></stop>
+                    </lineargradient>
+                    </defs>
+                    <path
+                    d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V150H0V109Z"
+                    fill="url(#paint0_linear)"
+                    ></path>
+                    <path
+                    d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                    stroke="#137fec"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                    ></path>
+                </svg>
+                <div
+                    class="flex justify-between mt-4 px-2 border-t border-slate-100 dark:border-slate-700 pt-3"
+                >
+                    {grafic.months.map(month => (
+                        <p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase">{month}</p>
+                    ))}
+                </div>
+            </div>
+        </div>
+        <!-- Features Context -->
+        <div class="flex flex-1 flex-col justify-center gap-6">
+            <div class="flex flex-col gap-4">
+                <h2 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight">{commonTexts.h2}</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed">{commonTexts.description}</p>
+            </div>
+            <div class="flex flex-col gap-4">
+            {features.map(({title, description, icon: Icon}) => (
+                <div class="flex items-start gap-4 rounded-lg bg-white dark:bg-slate-800 p-4 border border-slate-200 dark:border-slate-700/50">  
+                    <div class="mt-1 flex items-center justify-center p-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-primary">
+                        <Icon class="size-5 md:size-6 text-blue-500" />
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="text-slate-900 dark:text-white text-base font-bold">{title}</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">{description}</p>
+                    </div>
+                </div>
+            ))}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CTA Section -->
+<div class="w-full flex justify-center py-10">
+    <div
+        class="layout-content-container flex flex-col w-full rounded-2xl bg-linear-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 overflow-hidden shadow-xl relative"
+    >
+    <!-- Abstract Background Pattern -->
+        <div
+            class="absolute inset-0 opacity-20"
+            data-alt="Abstract dotted pattern background overlay"
+            style=" background-image: radial-gradient(#137fec 1px, transparent 1px); background-size: 24px 24px;"
+        ></div>
+        <div
+            class="flex flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 relative z-10 text-center"
+        >
+            <div class="flex flex-col gap-2">
+                <h2 class="text-white text-3xl sm:text-4xl font-black leading-tight tracking-tight">{cta.title}</h2>
+                <p class="text-slate-300 text-base sm:text-lg font-normal leading-normal max-w-2xl mx-auto">{cta.description}</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a
+                    class="flex items-center justify-center gap-2 rounded-lg bg-green-600 hover:bg-green-700 transition-colors text-white text-base font-bold h-12 px-8 min-w-50 shadow-lg shadow-blue-900/50"
+                    href=""
+                >
+                    <span>{cta.buttonWhatsapp}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
