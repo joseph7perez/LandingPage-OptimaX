@@ -3,12 +3,10 @@ import TeamCard from "../ui/TeamCard.astro";
 import { team as teamES } from "../../data/es/aboutUs";
 import { commonTexts as commontextsES } from "../../data/es/aboutUs";
 
----
-   
-   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+--- 
       <!-- Main Layout Container -->
       <div
-        class=" flex h-full grow flex-col items-center py-10 px-4"
+        class=" flex flex-col items-center pt-10 pb-20"
       >
         <!-- Section Header Content -->
         <div
@@ -28,12 +26,11 @@ import { commonTexts as commontextsES } from "../../data/es/aboutUs";
           </div>
         </div>
         <!-- Team Grid -->
-        <div class="layout-content-container w-full max-w-275">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="layout-content-container w-full ">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
             {teamES.map(member => (
                 <TeamCard {...member} />
             ))}
           </div>
         </div>
       </div>
-    </div>
